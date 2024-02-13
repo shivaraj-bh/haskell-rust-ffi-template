@@ -2,6 +2,8 @@
     "recommendations": [
         "rust-lang.rust-analyzer",
         "jnoortheen.nix-ide",
-        "mkhl.direnv"
+        "mkhl.direnv",
+        "haskell.haskell",
+        "bbenoist.nix"
     ]
 }
