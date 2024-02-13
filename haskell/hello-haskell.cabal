@@ -1,0 +1,14 @@
+cabal-version: 3.0
+name:          hello-haskell
+version:       0.1.0.0
+license:
+author:        shivaraj-bh
+build-type:    Simple
+
+executable hello-haskell
+  main-is:          Main.hs
+  ghc-options:      -Wall
+  extra-libraries:  hello_rust
+  build-depends:    base
+  hs-source-dirs:   src
+  default-language: Haskell2010

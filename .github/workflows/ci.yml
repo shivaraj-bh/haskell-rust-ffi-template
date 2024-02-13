@@ -1,24 +1,23 @@
-on: [push]
-
-name: CI
-
+# Based on: https://github.com/srid/haskell-template/blob/master/.github/workflows/ci.yaml
+name: "CI"
+on:
+  # Run only when pushing to master branch, and making PRs
+  push:
+    branches:
+      - master
+  pull_request:
 jobs:
-  check:
-    name: Rust project
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, macos-14]
     steps:
-      - uses: actions/checkout@v2
-      - name: Install latest nightly
-        uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: yaxitech/nix-install-pkgs-action@v3
         with:
-            toolchain: nightly
-            override: true
-            components: rustfmt, clippy
-
-      # `cargo check` command here will use installed `nightly`
-      # as it is set as an "override" for current directory
-
-      - name: Run cargo check
-        uses: actions-rs/cargo@v1
-        with:
-          command: check
+          packages: "nixpkgs#nixci"
+      - name: Build 🔨
+        run: nixci

@@ -5,10 +5,10 @@ default:
 fmt:
     treefmt
 
-# Run 'cargo run' on the project
+# Run 'cabal run' on the project
 run *ARGS:
-    cargo run {{ARGS}}
+    cd haskell && cabal run {{ARGS}}
 
-# Run 'cargo watch' to run the project (auto-recompiles)
+# Run 'ghcid -c cabal repl' to hot-reload
 watch *ARGS:
-    cargo watch -x "run -- {{ARGS}}"
+    cd haskell && ghcid -c cabal repl {{ARGS}}
