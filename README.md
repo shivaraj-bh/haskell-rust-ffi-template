@@ -17,7 +17,7 @@ TODO
 nix develop
 ```
 
-Or install [direnv](https://nixos.asia/en/direnv) and enter the shell on `cd`.
+Or install [direnv + nix-direnv](https://nixos.asia/en/direnv) and enter the shell on `cd`.
 
 We also provide a [`justfile`](https://just.systems/) for Makefile'esque commands.
 
