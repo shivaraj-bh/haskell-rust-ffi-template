@@ -1,15 +1,17 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
+{-# HLINT ignore "Use camelCase" #-}
+
 module Main where
 
-import Foreign.C.String
+import Foreign.C.String (CString, peekCString)
 
 -- | The `hello` function exported by the `hello_rust` library.
 foreign import ccall "hello" hello_rust :: IO CString
 
-{- |
-  Convert a C string to a Haskell string.
--}
-hello :: IO String
-hello = hello_rust >>= peekCString
+-- | Call `hello_rust` and convert the result to a Haskell `String`.
+hello_haskell :: IO String
+hello_haskell = hello_rust >>= peekCString
 
 main :: IO ()
-main = hello >>= putStrLn
+main = hello_haskell >>= putStrLn
