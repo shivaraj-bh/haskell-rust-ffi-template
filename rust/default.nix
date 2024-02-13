@@ -13,7 +13,7 @@
         inherit (cargoToml.package) name version;
         src = ./.;
         cargoLock.lockFile = ./Cargo.lock;
-        buildInputs = [ pkgs.fixDarwinDylibNames ];
+        buildInputs = if pkgs.stdenv.isDarwin then [ pkgs.fixDarwinDylibNames ] else [ ];
         postInstall = ''
           ${if pkgs.stdenv.isDarwin then "fixDarwinDylibNames" else ""}
         '';
