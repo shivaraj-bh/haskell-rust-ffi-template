@@ -1,7 +1,7 @@
 cabal-version: 3.0
 name:          hello-haskell
 version:       0.1.0.0
-license:
+license:       MIT
 author:        shivaraj-bh
 build-type:    Simple
 
