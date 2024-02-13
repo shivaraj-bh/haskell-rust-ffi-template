@@ -1,8 +1,10 @@
 # haskell-rust-ffi-template
 
-A template haskell project demonstrating how to use a rust library as a dependency. It is autowired with Nix to provide an environment within which you can work with both haskell and rust.
+A template haskell project demonstrating how to use a rust library as a dependency. It is integrated with Nix to provide an environment that enables you to:
 
-The development environment also comes with LSP ([rust-analyzer](https://github.com/rust-lang/rust-analyzer) and [haskell-language-server](https://github.com/haskell/haskell-language-server)) support. If you use VSCode, you can use the builtin configuration to get IDE experience without any manual setup (just [install direnv](https://nixos.asia/en/direnv), open in VSCode and accept the suggestions).
+- Simultaneously develop in Haskell and Rust.
+- Use LSP ([rust-analyzer](https://github.com/rust-lang/rust-analyzer) and [haskell-language-server](https://github.com/haskell/haskell-language-server)) for both languages.
+- Have builtin support for VSCode (just [install direnv](https://nixos.asia/en/direnv), open in VSCode and accept the suggestions).
 
 ## Getting Started
 
@@ -14,6 +16,8 @@ TODO
 # Dev shell
 nix develop
 ```
+
+Or install [direnv](https://nixos.asia/en/direnv) and enter the shell on `cd`.
 
 We also provide a [`justfile`](https://just.systems/) for Makefile'esque commands.
 
