@@ -8,7 +8,7 @@ A template haskell project demonstrating how to use a rust library as a dependen
 
 ## Getting Started
 
-TODO
+Install Nix, enable Flakes, open in VSCode and run `just run`
 
 ## Development
 
