@@ -3,9 +3,11 @@
     haskellProjects.default = {
       projectRoot = ./.;
       autoWire = [ "packages" "checks" "apps" ];
-      settings = {
-        hello_rust.custom = _: self'.packages.hello_rust;
-      };
+      otherOverlays = [
+        (_: _: {
+          inherit (self'.packages) hello_rust;
+        })
+      ];
     };
 
     packages.default = self'.packages.hello-haskell;
