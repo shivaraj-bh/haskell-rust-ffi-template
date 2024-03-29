@@ -21,6 +21,13 @@ Or install [direnv + nix-direnv](https://nixos.asia/en/direnv) and enter the she
 
 We also provide a [`justfile`](https://just.systems/) for Makefile'esque commands.
 
+## Credits
+
+This template combines two other templates, with additional tweaks applied on top:
+
+- [rust-nix-template](https://github.com/srid/rust-nix-template)
+- [haskell-template](https://github.com/srid/haskell-template)
+
 ## Discussion
 
 - [Zulip](https://nixos.zulipchat.com/#narrow/stream/413950-nix)
