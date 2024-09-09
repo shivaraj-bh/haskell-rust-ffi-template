@@ -16,7 +16,7 @@
             type = "devshell";
             # Name of the devshell profile to use
             # name = "default";
-            command = "cd haskell && cabal run";
+            command = "just run";
           };
         };
       };
