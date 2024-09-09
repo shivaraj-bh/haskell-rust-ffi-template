@@ -18,6 +18,7 @@
         inputs.haskell-flake.flakeModule
         ./rust
         ./haskell
+        ./nix/om.nix
       ];
 
       perSystem = { self', pkgs, config, ... }: {
