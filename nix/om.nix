@@ -16,7 +16,7 @@
             type = "devshell";
             # Name of the devshell profile to use
             # name = "default";
-            command = "just run";
+            command = [ "just" "run" ];
           };
         };
       };
