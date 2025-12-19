@@ -10,6 +10,8 @@ A template haskell project demonstrating how to use a rust library as a dependen
 
 Install Nix, enable Flakes, open in VSCode and run `just run`
 
+See also, <https://nixos.asia/en/haskell-rust-ffi>, if you are into tutorials.
+
 ## Development
 
 ```bash
