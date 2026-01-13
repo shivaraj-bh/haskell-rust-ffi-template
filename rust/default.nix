@@ -13,7 +13,11 @@
         inherit (cargoToml.package) name version;
         src = ./.;
         cargoLock.lockFile = ./Cargo.lock;
-        buildInputs = if pkgs.stdenv.isDarwin then [ pkgs.fixDarwinDylibNames ] else [ ];
+        nativeBuildInputs = with pkgs; [ pkg-config ];
+        buildInputs = with pkgs; [
+          nettle
+          gmp
+        ] ++ (if pkgs.stdenv.isDarwin then [ pkgs.fixDarwinDylibNames ] else [ ]);
         postInstall = ''
           ${if pkgs.stdenv.isDarwin then "fixDarwinDylibNames" else ""}
         '';
@@ -28,6 +32,11 @@
         nativeBuildInputs = with pkgs; [
           just
           rust-toolchain
+          pkg-config
+        ];
+        buildInputs = with pkgs; [
+          nettle
+          gmp
         ];
         RUST_BACKTRACE = 1;
       };

@@ -9,6 +9,10 @@ executable hello-haskell
   main-is:          Main.hs
   ghc-options:      -Wall
   extra-libraries:  hello_rust
-  build-depends:    base
+  extra-lib-dirs:   ../rust/target/debug
+  build-depends:    base,
+                    bytestring,
+                    text,
+                    base64-bytestring
   hs-source-dirs:   src
   default-language: Haskell2010

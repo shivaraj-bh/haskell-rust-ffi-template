@@ -18,3 +18,11 @@ run *ARGS:
 # Run 'ghcid -c cabal repl' to hot-reload
 watch *ARGS:
     cd haskell && ghcid -c cabal repl {{ARGS}}
+
+# Run cargo commands on the Rust project
+cargo *ARGS:
+    cd rust && cargo {{ARGS}}
+
+# Build Rust library first, then run Haskell
+both:
+    cd rust && cargo build && cd ../haskell && cabal run
