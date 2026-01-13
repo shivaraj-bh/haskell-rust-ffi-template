@@ -9,3 +9,20 @@ version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]
+
+# ------------------------------------------------------------
+# Dependencies for main library / binary
+# ------------------------------------------------------------
+[dependencies]
+sequoia-openpgp = "1.17"
+thiserror = "1.0"
+anyhow = "1.0"
+log = "0.4"
+base64 = "0.22.1"
+# libc = "0.2"
+
+# ------------------------------------------------------------
+# Development / test dependencies
+# ------------------------------------------------------------
+[dev-dependencies]
+tempfile = "3.6"
